@@ -1,5 +1,5 @@
 [project]
-name = "mesa-posta"
+name = "mesa-posta-api"
 version = "0.1.0"
 description = "Convidados, confirmação de presença, mesas e check-in para cerimonial de casamentos."
 readme = "README.md"

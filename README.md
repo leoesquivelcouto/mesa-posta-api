@@ -1,11 +1,17 @@
-# Mesa Posta
+# Mesa Posta · API (amostra de código)
 
 API para o cerimonial de casamentos organizar **convidados, confirmação de presença (RSVP), mesas e
 check-in na entrada por QR code**.
 
-> **Status:** v0.1, backend completo e testado. A interface web e o deploy estão nos próximos passos, e as
-> funcionalidades ainda vão ser validadas com um cerimonial de Brasília onde trabalhei. **Ainda não foi usado
-> num evento real.**
+> **Duas versões do mesmo projeto:**
+>
+> | Repositório | O que é |
+> |---|---|
+> | **mesa-posta-api** (este) | **Amostra de código**: só o backend, com foco nas regras de negócio, na concorrência e nos testes. A interface é a documentação da API (`/docs`) |
+> | [mesa-posta-app](https://github.com/leoesquivelcouto/mesa-posta-app) | **Produto finalizado**: o mesmo backend com telas para cerimonial, noivos, convidados (no celular) e recepção (leitor de QR pela câmera) |
+>
+> **Status:** v0.1, backend completo e testado. Ainda não foi usado num evento real; a validação com um
+> cerimonial de Brasília onde trabalhei acontece com a versão completa.
 
 ## O problema
 
@@ -159,7 +165,7 @@ Falta implementar a **exclusão automática dos dados após o evento** (está no
 
 ## Limitações conhecidas
 
-- Sem interface web ainda: hoje tudo é feito pela API (ou por `/docs`).
+- Sem interface própria: aqui tudo é feito pela API (ou por `/docs`). A interface está no [mesa-posta-app](https://github.com/leoesquivelcouto/mesa-posta-app).
 - Sem recuperação de senha nem convite da equipe por e-mail (a pessoa cria a conta e o cerimonial a adiciona).
 - O link vale até alguém regenerar os convites; não há expiração por token individual, só o prazo do evento.
 - Sem limite de requisições por IP. Adivinhar um token de 256 bits é inviável, mas o login deveria ter.
@@ -167,7 +173,7 @@ Falta implementar a **exclusão automática dos dados após o evento** (está no
 ## Próximos passos
 
 - [ ] Validar as funcionalidades com o cerimonial (o que falta, o que sobra).
-- [ ] Interface web: painel do cerimonial, página de confirmação para celular e leitor de QR para a recepção.
+- [x] Interface web: feita no [mesa-posta-app](https://github.com/leoesquivelcouto/mesa-posta-app).
 - [ ] Deploy (API e PostgreSQL gerenciado) com CI/CD.
 - [ ] Usar num evento real e registrar os números aqui.
 - [ ] Anonimizar convidados X dias após o evento; limite de tentativas no login.
